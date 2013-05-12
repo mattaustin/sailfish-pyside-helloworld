@@ -4,7 +4,6 @@ from __future__ import absolute_import, unicode_literals
 from PySide.QtCore import Qt
 from PySide.QtDeclarative import QDeclarativeView
 from PySide.QtGui import QApplication
-from PySide.QtOpenGL import QGLWidget
 import os
 import sys
 
@@ -21,7 +20,6 @@ class View(QDeclarativeView):
         self.setAttribute(Qt.WA_OpaquePaintEvent)
         self.setAttribute(Qt.WA_NoSystemBackground)
 
-        self.setViewport(QGLWidget())
         self.viewport().setAttribute(Qt.WA_OpaquePaintEvent)
         self.viewport().setAttribute(Qt.WA_NoSystemBackground)
 

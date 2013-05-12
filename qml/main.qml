@@ -22,4 +22,10 @@ ApplicationWindow {
         }
     }
 
+    cover: CoverBackground {
+         CoverPlaceholder {
+             text: "Hello World"
+         }
+     }
+
 }
