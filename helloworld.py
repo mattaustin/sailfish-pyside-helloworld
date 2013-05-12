@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from __future__ import absolute_import, unicode_literals
 from PySide.QtCore import Qt
 from PySide.QtDeclarative import QDeclarativeView
 from PySide.QtGui import QApplication
