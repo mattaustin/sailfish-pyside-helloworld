@@ -28,5 +28,5 @@ class View(QDeclarativeView):
 
 if __name__ == "__main__":
     view = View()
-    view.show()
+    view.showFullScreen()
     app.exec_()
