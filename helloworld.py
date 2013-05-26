@@ -1,32 +1,31 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from PySide.QtCore import Qt
+from PySide.QtCore import Qt, QUrl
 from PySide.QtDeclarative import QDeclarativeView
 from PySide.QtGui import QApplication
-import os
 import sys
-
-
-app = QApplication(sys.argv)
 
 
 class View(QDeclarativeView):
 
-    qml_source = os.path.join('qml', 'main.qml')
+    qml_path = 'qml/main.qml'
+    window_title = 'Hello World'
 
     def __init__(self, *args, **kwargs):
         super(View, self).__init__(*args, **kwargs)
+
         self.setAttribute(Qt.WA_OpaquePaintEvent)
         self.setAttribute(Qt.WA_NoSystemBackground)
-
         self.viewport().setAttribute(Qt.WA_OpaquePaintEvent)
         self.viewport().setAttribute(Qt.WA_NoSystemBackground)
 
+        self.setWindowTitle(self.window_title)
+        self.setSource(QUrl.fromLocalFile(self.qml_path))
         self.setResizeMode(QDeclarativeView.SizeRootObjectToView)
-        self.setSource(self.qml_source)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
     view = View()
     view.showFullScreen()
-    app.exec_()
+    sys.exit(app.exec_())
